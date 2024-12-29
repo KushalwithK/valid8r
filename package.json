@@ -1,0 +1,36 @@
+{
+  "name": "@c4code/valid8r",
+  "description": "Valid8r is a lightweight npm package for validating user inputs like names, emails, phone numbers, dates, and much more.",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "valid8r",
+    "form validation",
+    "field validation",
+    "input validation",
+    "javascript validation library",
+    "validate email and numbers",
+    "lightweight validation package",
+    "real-time validation",
+    "npm validation package",
+    "data validation tool"
+  ],
+  "author": "kushal_shah",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "libphonenumber-js": "^1.11.17"
+  }
+}
