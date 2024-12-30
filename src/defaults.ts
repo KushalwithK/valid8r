@@ -1,5 +1,6 @@
 import {
   AddressValidatorProps,
+  CardDetails,
   DateValidatorProps,
   DefaultErrorType,
   DefaultType,
@@ -220,6 +221,11 @@ export const defaultDateErrorMsgs: Partial<
   allowPastDates: "Past dates are not allowed.",
   requireLeapYear: "Date is not in a leap year.",
 };
+
+export const defaultCardProps: Partial<CardDetails>= {
+  safe: false,
+  throwErrorsAs: 'throw-all'
+}
 
 export const defaultCardErrorMsgs = {
   number: "Invalid card number.",

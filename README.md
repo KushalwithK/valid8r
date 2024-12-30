@@ -6,7 +6,7 @@
 
 ![TypeScript](https://img.shields.io/badge/language-typescript-blue)
 
-[Documentation](https://bitbybit-1.gitbook.io/valid8r-docs/)
+[Documentation](https://c4code.gitbook.io/valid8r/)
 
 
 # Get Started

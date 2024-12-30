@@ -53,3 +53,11 @@ export class DateValidationFailed extends Error {
     Object.setPrototypeOf(this, DateValidationFailed.prototype);
   }
 }
+
+export class CardValidationFailed extends Error {
+  constructor(message = "Card validation failed") {
+    super(message);
+    this.name = "CardValidationFailedError";
+    Object.setPrototypeOf(this, CardValidationFailed.prototype);
+  }
+}

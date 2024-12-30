@@ -1,4 +1,5 @@
-import { defaultCardErrorMsgs } from "../defaults";
+import { defaultCardErrorMsgs, defaultCardProps } from "../defaults";
+import { CardValidationFailed } from "../errors/ValidationErrors";
 import { CardDetails } from "../utils/types";
 
 export const validateCard = (
@@ -7,7 +8,8 @@ export const validateCard = (
     expirationDate,
     cvv,
     cardHolderName,
-    throwErrorsAs = "throw-all",
+    throwErrorsAs = defaultCardProps.throwErrorsAs!,
+    safe = defaultCardProps.safe!,
   }: CardDetails,
   errorMsgs: Partial<Record<keyof CardDetails, string>> = defaultCardErrorMsgs
 ): [boolean, null | Partial<Record<keyof CardDetails, string>>] => {
@@ -86,6 +88,14 @@ export const validateCard = (
       "cardHolderName",
       getMessage("cardHolderName", defaultCardErrorMsgs.cardHolderName)
     );
+  }
+
+  if (!safe && Object.keys(errors).length > 0) {
+    if (["throw-first", "throw-last"].includes(throwErrorsAs)) {
+      throw new CardValidationFailed(Object.values(errors)[0]);
+    } else if (throwErrorsAs === "throw-all") {
+      throw new CardValidationFailed(JSON.stringify(errors));
+    }
   }
 
   return Object.keys(errors).length > 0 ? [false, errors] : [true, null];

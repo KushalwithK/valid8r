@@ -96,7 +96,7 @@ export interface UsernameValidatorProps {
 }
 
 export interface DateValidatorProps {
-  format?: 'DD-MM-YYYY' | 'MM-DD-YYYY' | 'YYYY-MM-DD';
+  format?: "DD-MM-YYYY" | "MM-DD-YYYY" | "YYYY-MM-DD";
   minDate?: `${string}-${string}-${string}`;
   maxDate?: `${string}-${string}-${string}`;
   allowFutureDates?: boolean;
@@ -111,10 +111,14 @@ export interface DefaultType {
   email?: EmailValidatorProps;
   phone?: PhoneValidatorProps;
   address?: AddressValidatorProps;
-  password?: PasswordValidatorProps,
-  ip?: IPAddressValidatorProps,
+  password?: PasswordValidatorProps;
+  ip?: IPAddressValidatorProps;
   username?: UsernameValidatorProps;
   date?: DateValidatorProps;
+  card?: {
+    throwErrorsAs?: "throw-first" | "throw-last" | "throw-all";
+    safe?: boolean;
+  };
 }
 
 export interface DefaultErrorType {
@@ -126,6 +130,10 @@ export interface DefaultErrorType {
   ip?: Partial<Record<keyof IPAddressValidatorProps, string>>;
   username?: Partial<Record<keyof UsernameValidatorProps, string>>;
   date?: Partial<Record<keyof DateValidatorProps, string>>;
+  card?: {
+    throwErrorsAs?: string;
+    safe?: string;
+  };
 }
 
 export interface CardDetails {
@@ -134,4 +142,5 @@ export interface CardDetails {
   cvv: number;
   cardHolderName: string;
   throwErrorsAs?: "throw-first" | "throw-last" | "throw-all";
+  safe?: boolean;
 }

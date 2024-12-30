@@ -9,7 +9,7 @@ import { validatePassword } from './functions/password_validators'
 import { validatePhone } from './functions/phone_validators'
 import { validateUsername } from './functions/username_validators'
 
-export default {
+const valid8r = {
     defaults: setDefaults,
     name: validateName,
     email: validateEmail,
@@ -20,4 +20,6 @@ export default {
     username: validateUsername,
     date: validateDate,
     card: validateCard,
-}
+};
+
+export default valid8r;
