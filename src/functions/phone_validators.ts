@@ -70,7 +70,7 @@ export const validatePhone = (
   const countryCodeMatch = sanitizedPhone.match(/^\+\d+/);
   const countryCode = countryCodeMatch ? countryCodeMatch[0] : "";
   const rawPhone = requireCountryCode
-    ? parsePhoneNumberFromString(phone)?.nationalNumber
+    ? parsePhoneNumberFromString(phone)?.nationalNumber ?? phone
     : phone;
 
   if (requireCountryCode && !defaultCountryCodes.includes(countryCode)) {
@@ -86,8 +86,6 @@ export const validatePhone = (
     );
   }
 
-  const baseRegex = new RegExp(`^[\\d\\s\\-\\(\\)]+$`);
-  if (baseRegex.test(phone)) {
     if (!allowDashes && /-/.test(phone)) {
       addError(
         "allowDashes",
@@ -112,7 +110,6 @@ export const validatePhone = (
         "Phone number contains invalid characters. Only digits, spaces, dashes, and parentheses are allowed."
       );
     }
-  }
 
   if (!rawPhone || rawPhone.length < minLen) {
     addError(

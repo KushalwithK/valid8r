@@ -64,9 +64,19 @@ export const validateCard = (
   }
 
   if (
-    !expirationDate ||
-    !(expirationDate instanceof Date) ||
-    expirationDate < new Date()
+    !/^\d{2}\/\d{2}$/.test(expirationDate) ||
+    (() => {
+      const [month, year] = expirationDate.split("/").map(Number);
+      const currentDate = new Date();
+      const currentMonth = currentDate.getMonth() + 1;
+      const currentYear = currentDate.getFullYear() % 100;
+      return (
+        month < 1 ||
+        month > 12 ||
+        year < currentYear ||
+        (year >= currentYear && month < currentMonth)
+      );
+    })()
   ) {
     addError(
       "expirationDate",

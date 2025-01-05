@@ -122,7 +122,7 @@ import './config.ts';
 That's it! Now all the validation functions used in the project will use this as their default configuration, until they are specifically provided with their own configuration. Such as:
 
 ```typescript
-import valid8r from '@bitbybit/valid8r';
+import valid8r from '@c4code/valid8r';
 
 // Your input's value
 const input: string = "Jonathan Wilson2";
@@ -141,7 +141,7 @@ The configuration is flexible and can be customized according to the projects ne
 If you don't like the default error messages, and want to configure the error messages according to you valid8r provides a simple way to configure every error message efficiently.
 
 ```javascript
-import valid8r from '@bitbybit/valid8r';
+import valid8r from '@c4code/valid8r';
 ```
 
 Call defaults function in the valid8r and pass an object that of all the field's error messages your want to configure as the second argument.
@@ -160,7 +160,7 @@ valid8r.defaults({
 However, some fields accept dynamic values that get converts to their relative values when the error is thrown,
 
 ```javascript
-import valid8r from '@bitbybit/valid8r';
+import valid8r from '@c4code/valid8r';
 
 valid8r.defaults({
     /* Field configurations */
@@ -188,7 +188,7 @@ You can configure all the field's error message to be used as default in any of 
 If any validation function requires a specific error you can easily set the error message as the third parameter in any validation function
 
 ```javascript
-import valid8r from '@bitbybit/valid8r';
+import valid8r from '@c4code/valid8r';
 
 // Your input's value
 const input: string = "Jay Carlo$";

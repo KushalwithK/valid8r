@@ -148,9 +148,9 @@ export const defaultPasswordErrorMsgs: Partial<
   Record<keyof PasswordValidatorProps, string>
 > = {
   minLen: "Password must be at least {minLen} characters long.",
-  maxLen: "Password must not exceed ${maxLen} characters.",
+  maxLen: "Password must not exceed {maxLen} characters.",
   requireSpChars:
-    "Password must include at least one of the following special characters: ${allowedSpChars}",
+    "Password must include at least one of the following special characters: {allowedSpChars}",
   requireNum: "Password must include at least one numeric character.",
   requireUpper: "Password must include at least one uppercase letter.",
   requireLower: "Password must include at least one lowercase letter.",
@@ -196,7 +196,7 @@ export const defaultUsernameErrorMsgs: Partial<
   allowNumbers: "Username contains invalid numbers.",
   allowUnderscores: "Username contains invalid underscores.",
   allowDashes: "Username contains invalid dashes.",
-  allowSpecialChars: "Username cannot contains special characters.",
+  allowSpecialChars: "Username cannot contains special characters, other than {allowSpecialChars}.",
   allowSpaces: "Username cannot include spaces.",
   allowUppercase: "Username cannot include uppercase letters.",
   customRegex: "Username does not match the required format.",
@@ -229,7 +229,7 @@ export const defaultCardProps: Partial<CardDetails>= {
 
 export const defaultCardErrorMsgs = {
   number: "Invalid card number.",
-  expirationDate: "Invalid expiration date.",
+  expirationDate: "Card is expired!",
   cvv: "Invalid CVV.",
   cardHolderName: "Invalid cardholder name.",
 };

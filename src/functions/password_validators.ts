@@ -67,7 +67,7 @@ export const validatePassword = (
     if (Array.isArray(requireSpChars)) {
       spCharPattern = requireSpChars.map((char) => `\\${char}`).join("");
     } else {
-      spCharPattern = `[^a-zA-Z0-9\\s]`;
+      spCharPattern = `^a-zA-Z0-9\\s`;
     }
     const spCharRegex = new RegExp(`[${spCharPattern}]`);
     if (!spCharRegex.test(password)) {

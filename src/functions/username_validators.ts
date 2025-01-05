@@ -83,7 +83,7 @@ export const validateUsername = (
     );
   }
   if (allowUnderscores) {
-    basePattern.push("_");
+    basePattern.push("/_/");
   } else if (/_/.test(username)) {
     addError(
       "allowUnderscores",
@@ -95,7 +95,7 @@ export const validateUsername = (
     );
   }
   if (allowDashes) {
-    basePattern.push("-");
+    basePattern.push("/-/");
   } else if (/-/.test(username)) {
     addError(
       "allowDashes",
@@ -123,8 +123,7 @@ export const validateUsername = (
       "allowSpecialChars",
       getMessage(
         "allowSpecialChars",
-        defaultUsernameErrorMsgs.allowSpecialChars!,
-        {}
+        "No Special Character is allowed!"
       )
     );
   }
@@ -136,7 +135,11 @@ export const validateUsername = (
       getMessage(
         "allowSpecialChars",
         defaultUsernameErrorMsgs.allowSpecialChars!,
-        {}
+        {
+          allowSpecialChars: Array.isArray(allowSpecialChars)
+            ? allowSpecialChars.join(" or ")
+            : "",
+        }
       )
     );
   }

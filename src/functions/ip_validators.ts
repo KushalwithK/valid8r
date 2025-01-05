@@ -5,7 +5,7 @@ import { IPAddressValidatorProps } from "../utils/types";
 export const validateIPAddress = (
   ip: string,
   {
-    version,
+    version = '*',
     allowPrivate = defaultIPAddressProps.allowPrivate!,
     allowLoopback = defaultIPAddressProps.allowLoopback!,
     throwErrorsAs = defaultIPAddressProps.throwErrorsAs!,

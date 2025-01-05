@@ -136,9 +136,16 @@ export interface DefaultErrorType {
   };
 }
 
+export interface CardType {
+  number: string;
+  expirationDate: `${string}/${string}`;
+  cvv: number;
+  cardHolderName: string;
+}
+
 export interface CardDetails {
   number: string;
-  expirationDate: Date;
+  expirationDate: `${string}/${string}`;
   cvv: number;
   cardHolderName: string;
   throwErrorsAs?: "throw-first" | "throw-last" | "throw-all";

@@ -88,7 +88,7 @@ export const validateAddress = (
 
   if (
     Array.isArray(allowedSpChars) &&
-    !invalidCharsRegex.test(address)
+    invalidCharsRegex.test(address)
   ) {
     addError(
       "allowedSpChars",
