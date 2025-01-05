@@ -7,7 +7,7 @@
 ![TypeScript](https://img.shields.io/badge/language-typescript-blue)
 
 [Documentation](https://c4code.gitbook.io/valid8r/)
-
+[Codesandbox ( React + TS )](https://codesandbox.io/p/sandbox/3xj39m)
 
 # Get Started
 Valid8r is a node.js library, which means any application that runs on node.js can use valid8r.  
