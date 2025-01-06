@@ -13,8 +13,8 @@
 Valid8r is a node.js library, which means any application that runs on node.js can use valid8r.  
 
 Start by installing `valid8r`
-```javascript
-npm install '@c4code/valid8r';
+```bash
+npm install @c4code/valid8r
 ```
 Installing Valid8r is quick and simple. Just run npm install valid8r to get started, and you're ready to validate your fields with minimal setup.
 
@@ -26,7 +26,7 @@ Installing Valid8r is quick and simple. Just run npm install valid8r to get star
 - [Default Configuration](#4-default-configuration)
 - [Authors](#5-authors)
 - [License](#6-license)
-- [BMAC 😉](#7-buy-me-a-coffee-😉)
+- [Support](#7-buy-me-a-coffee)
 
 ## 1. Installation
 
@@ -34,8 +34,8 @@ Install Valid8r with npm / yarn / bun
 
 ```bash
   npm install @c4code/valid8r // For npm
-  yarn add @c4code/valid8r // For Yarn
-  bun add @c4code/valid8r // For Bun
+  yarn add @c4code/valid8r    // For Yarn
+  bun add @c4code/valid8r     // For Bun
 ```
 
 ## 2. Demo
@@ -230,7 +230,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## 7. Buy Me a Coffee 😉
+## 7. Buy Me a Coffee
 
 #### If you like this package, show your support & love!
 
